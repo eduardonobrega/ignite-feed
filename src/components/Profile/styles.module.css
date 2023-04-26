@@ -1,0 +1,28 @@
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.avatar {
+  width: 49.09px;
+  border-radius: 5px;
+  border: 4px solid var(--gray-800);
+  outline: 2px solid var(--green-500);
+  box-sizing: initial;
+}
+.profile > div {
+  display: flex;
+  flex-direction: column;
+}
+.profile strong {
+  color: var(--gray-100);
+  font-weight: 700;
+  line-height: 2.6rem;
+}
+
+.profile span {
+  color: var(--gray-400);
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
