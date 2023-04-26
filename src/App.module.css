@@ -1,0 +1,9 @@
+.wrapper {
+  width: min(98%, 112rem);
+  margin: 3.2rem auto;
+
+  display: grid;
+  grid-template-columns: 25.6rem 1fr;
+  align-items: flex-start;
+  gap: 3.2rem;
+}
