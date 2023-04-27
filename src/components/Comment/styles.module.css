@@ -1,0 +1,109 @@
+.comment {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.comment > img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.wrapper > footer {
+  margin-top: 1.6rem;
+}
+
+.wrapper > footer > button {
+  color: var(--gray-400);
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper > footer > button svg {
+  margin-right: 1rem;
+}
+
+/* .wrapper > footer > button span {
+  display: inline-block;
+
+  background-color: red;
+
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+} */
+
+.wrapper > footer > button span::before {
+  content: "\2022";
+  padding: 0 0.4rem;
+
+}
+
+.wrapper > footer > button:hover,
+.wrapper > footer > button:focus {
+  color: var(--gray-100);
+  box-shadow: none;
+}
+
+.wrapper > footer > button:active {
+  color: var(--green-300);
+}
+
+.commentBox {
+  background-color: var(--gray-700);
+
+  min-height: 12rem;
+  padding: 1.6rem;
+  border-radius: 9px;
+}
+
+.commentBox > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.6rem;
+}
+
+.commentBox > header > .authorAndTimer > strong {
+  display: block;
+  color: var(--gray-100);
+  font-weight: 700;
+  line-height: 2.2rem;
+}
+
+.commentBox > header > .authorAndTimer > time {
+  display: block;
+
+  color: var(--gray-400);
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+}
+
+.commentBox > header > button {
+  background-color: transparent;
+  color: var(--gray-400);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.commentBox > header > button:hover {
+  color: var(--red);
+}
+
+.commentBox > p {
+  font-size: 1.4rem;
+  line-height: 2.24rem;
+}

@@ -1,13 +1,10 @@
+import { Avatar } from '../Avatar';
 import stiles from './styles.module.css';
 
 export function Profile(props) {
   return (
     <div className={stiles.profile + ` ${props.className}`}>
-      <img
-        className={stiles.avatar}
-        src={props.avatar}
-      />
-
+      <Avatar src="https://github.com/eduardonobrega.png" hasBorder />
       <div>
         <strong>{props.name}</strong>
 

@@ -105,3 +105,13 @@
   box-shadow: none;
   background-color: var(--green-300);
 }
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.comments:has(div) {
+  margin-top: 3.2rem;
+}
