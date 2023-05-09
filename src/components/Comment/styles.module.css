@@ -1,13 +1,7 @@
 .comment {
   display: flex;
+  align-items: flex-start;
   gap: 1.6rem;
-}
-
-.comment > img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 .wrapper {
@@ -33,22 +27,13 @@
 
 .wrapper > footer > button svg {
   margin-right: 1rem;
+  width: 2rem;
+  height: 2rem;
 }
-
-/* .wrapper > footer > button span {
-  display: inline-block;
-
-  background-color: red;
-
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-} */
 
 .wrapper > footer > button span::before {
   content: "\2022";
   padding: 0 0.4rem;
-
 }
 
 .wrapper > footer > button:hover,
@@ -97,6 +82,11 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.commentBox > header > button > svg{ 
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .commentBox > header > button:hover {
