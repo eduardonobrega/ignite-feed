@@ -97,13 +97,18 @@
   transition: background-color 100ms;
 }
 
-.form button[type='submit']:hover {
+.form button[type='submit']:hover:not(:disabled) {
   background-color: var(--green-300);
 }
 
 .form button[type='submit']:focus {
   box-shadow: none;
   background-color: var(--green-300);
+}
+
+.form button[type='submit']:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .comments {
