@@ -1,41 +1,49 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+
 import { Comment } from '../Comment';
 import { Profile } from '../Profile';
 
 import styles from './styles.module.css';
 
-export function Post() {
+export function Post({ author, content, publishedAt }) {
+  const publishedDateFormatted = format(
+    publishedAt,
+    "d 'de' LLLL 'às' HH:mm'h'",
+    { locale: ptBR }
+  );
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {locale: ptBR, addSuffix: true})
+  
   return (
     <article className={styles.post}>
       <header>
         <Profile
-          avatar="https://github.com/diego3g.png"
-          name="Diego Fernandes"
-          occupation="CTO at Rocketseat"
+          avatar={author.avatarUrl}
+          name={author.name}
+          occupation={author.occupation}
         />
 
-        <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:30">
-          Públicado há 1h
+        <time
+          title={publishedDateFormatted}
+          dateTime={publishedAt.toISOString()}
+        >
+          {publishedDateRelativeToNow}
         </time>
       </header>
 
       <div className={styles.content}>
-        <p>Fala galeraa 👋</p>
-
-        <p>
-          Acabei de subir mais um projeto no meu portifolio. É um projeto que
-          fiz no NLW Return, evento da Rocketseat. O nome do projeto é
-          DoctorCare 🚀
-        </p>
-
-        <p>
-          👉 &nbsp;<a href="#">jane.design/doctorcare</a>
-        </p>
-
-        <p>
-          <a href="#">#novoprojeto</a>
-          <a href="#"> &nbsp;#nlw</a>
-          <a href="#"> &nbsp;#rocketseat</a>
-        </p>
+        {content?.map((item, index) => {
+          if (item.type === 'paragraph') {
+            return <p key={String(index)}>{item.info}</p>;
+          } else {
+            return (
+              <p key={String(index)}>
+                <a href="#">👉 {item.info}</a>
+              </p>
+            );
+          }
+        })}
       </div>
 
       <form className={styles.form}>
@@ -48,8 +56,8 @@ export function Post() {
       </form>
 
       <div className={styles.comments}>
-        <Comment/>
-        <Comment/>
+        <Comment />
+        <Comment />
       </div>
     </article>
   );

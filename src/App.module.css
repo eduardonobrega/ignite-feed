@@ -13,10 +13,9 @@
     font-size: 56.25%; 
   }
 
-
   .wrapper {
     grid-template-columns: 1fr;
-    width: min(90%, 112rem);
+    width: 90%
   }
 }
 
@@ -25,11 +24,6 @@
     font-size: 43.75%; 
   }
 
-
-  .wrapper {
-    grid-template-columns: 1fr;
-    width: 90%;
-  }
 }
 
 
