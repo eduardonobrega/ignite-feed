@@ -32,7 +32,7 @@
 }
 
 .wrapper > footer > button span::before {
-  content: "\2022";
+  content: '\2022';
   padding: 0 0.4rem;
 }
 
@@ -84,7 +84,7 @@
   cursor: pointer;
 }
 
-.commentBox > header > button > svg{ 
+.commentBox > header > button > svg {
   width: 2.4rem;
   height: 2.4rem;
 }
