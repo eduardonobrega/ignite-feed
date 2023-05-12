@@ -9,7 +9,7 @@ propriedades, estados, imutabilidade e hooks, além disso foi aplicado o TypeScr
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="ignite-feed.bohr.io/">Deploy</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://ignite-feed.bohr.io/">Deploy</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 <p align="center">
@@ -31,7 +31,7 @@ propriedades, estados, imutabilidade e hooks, além disso foi aplicado o TypeScr
 
 <div align="center">
 
-  <h1><a href="ignite-feed.bohr.io/">👾 Site ao vivo</a></h1> 
+  <h1><a href="https://ignite-feed.bohr.io/">👾 Site ao vivo</a></h1> 
 
 </div>
 
