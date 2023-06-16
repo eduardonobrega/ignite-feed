@@ -1,9 +1,9 @@
-import { Header } from './components/Header';
-import { Sidebar } from './components/Sidebar';
-
-import './global.css';
-import styles from './App.module.css';
-import { Post, PostType } from './components/Post';
+import { Header } from './components/Header'
+import { Modal } from './components/Modal'
+import { Post, PostType } from './components/Post'
+import { Sidebar } from './components/Sidebar'
+import './global.css'
+import styles from './App.module.css'
 
 const posts: PostType[] = [
   {
@@ -38,9 +38,9 @@ const posts: PostType[] = [
       },
       { type: 'link', info: 'jane.design/doctorcare' },
     ],
-    publishedAt: new Date('2023-05-02 19:30:00'),
+    publishedAt: new Date('2023-06-15 14:34:00'),
   },
-];
+]
 
 export function App() {
   return (
@@ -50,10 +50,13 @@ export function App() {
         <Sidebar />
         <main>
           {posts.map((post) => (
-            <Post key={post.id} post={post} />
+            <Post post={post} key={post.id} />
           ))}
         </main>
       </div>
+      <div>
+        <Modal />
+      </div>
     </div>
-  );
+  )
 }

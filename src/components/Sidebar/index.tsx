@@ -1,25 +1,29 @@
-import { Profile } from '../Profile';
-import stiles from './styles.module.css';
-import { PencilSimpleLine } from '@phosphor-icons/react';
+import { Profile } from '../Profile'
+import { PencilSimpleLine } from '@phosphor-icons/react'
+import styles from './styles.module.css'
 
 export function Sidebar() {
   return (
-    <aside className={stiles.sidebar}>
-      <img src="https://images.unsplash.com/photo-1604964432806-254d07c11f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGV2ZWxvcGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=50" />
-
+    <aside className={styles.sidebar}>
+      <img
+        src="https://images.unsplash.com/photo-1604964432806-254d07c11f32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZGV2ZWxvcGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=50"
+        alt=""
+      />
       <Profile
-        className={stiles.profile}
-        avatar="https://github.com/eduardonobrega.png"
-        name="Eduardo Nóbrega"
-        occupation="Web Developer"
+        user={{
+          name: 'Eduardo Nóbrega',
+          avatarUrl: 'https://github.com/eduardonobrega.png',
+          occupation: 'Web Developer',
+        }}
+        column
       />
 
       <footer>
         <a href="#">
-          <PencilSimpleLine size={20} />
+          <PencilSimpleLine />
           Editar seu perfil
         </a>
       </footer>
     </aside>
-  );
+  )
 }

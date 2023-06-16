@@ -4,18 +4,18 @@
   gap: 1.6rem;
 }
 
-
-.profile > div {
-  display: flex;
+.profile.column {
   flex-direction: column;
+  text-align: center;
 }
-.profile strong {
-  color: var(--gray-100);
+
+.userInfo > strong {
+  display: block;
   font-weight: 700;
   line-height: 2.6rem;
 }
-
-.profile span {
+.userInfo > span {
+  display: block;
   color: var(--gray-400);
   font-size: 1.4rem;
   line-height: 2.2rem;

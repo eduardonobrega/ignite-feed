@@ -1,0 +1,71 @@
+.modalWrapper {
+  background-color: #000000bf;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal {
+  background-color: var(--gray-800);
+  text-align: center;
+
+  max-width: 43.2rem;
+  padding: 2.4rem 3.2rem;
+  border-radius: 8px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal > h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.modal > p {
+  color: var(--gray-300);
+  line-height: 2.6rem;
+  margin: 2.4rem 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.buttons > button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+
+  cursor: pointer;
+  border: none;
+
+  padding: 1.2rem 3.2rem;
+  border-radius: 8px;
+
+  transition: background-color 200ms, filter 200ms;
+}
+
+.buttons > button:first-child {
+  background-color: transparent;
+  color: var(--gray-100);
+}
+.buttons > button:first-child:hover {
+  background-color: var(--gray-600);
+}
+
+.buttons > button:last-child {
+  background-color: var(--gray-700);
+  color: var(--red);
+}
+
+.buttons > button:last-child:hover {
+  filter: brightness(1.2);
+}

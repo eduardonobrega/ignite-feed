@@ -1,22 +1,20 @@
-import { Avatar } from '../Avatar';
-import stiles from './styles.module.css';
+import { Avatar } from '../Avatar'
+import styles from './styles.module.css'
+import { User } from '../Post'
 
 interface ProfileProps {
-  avatar: string;
-  className?: string;
-  name: string;
-  occupation: string;
+  column?: boolean
+  user: User
 }
 
-export function Profile({ avatar, className, name, occupation }: ProfileProps) {
+export function Profile({ column = false, user }: ProfileProps) {
   return (
-    <div className={stiles.profile + ` ${className}`}>
-      <Avatar src={avatar} hasBorder />
-      <div>
-        <strong>{name}</strong>
-
-        <span>{occupation}</span>
+    <div className={`${styles.profile} ${column && styles.column}`}>
+      <Avatar hasBorder src={user.avatarUrl} />
+      <div className={styles.userInfo}>
+        <strong>{user.name}</strong>
+        <span>{user.occupation}</span>
       </div>
     </div>
-  );
+  )
 }

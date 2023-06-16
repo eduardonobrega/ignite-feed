@@ -1,46 +1,39 @@
-import { Trash, ThumbsUp } from '@phosphor-icons/react';
-import styles from './styles.module.css';
-import { Avatar } from '../Avatar';
-import { useState } from 'react';
-
-interface Author {
-  name: string;
-  avatarUrl: string;
-  occupation: string;
-}
+import { useState } from 'react'
+import { Avatar } from '../Avatar'
+import styles from './styles.module.css'
+import { Trash, ThumbsUp } from '@phosphor-icons/react'
+import { User } from '../Post'
 
 interface CommentProps {
-  author: Author;
-  content: string;
-  onDeleteComment: (comment: string) => void;
+  author: User
+  content: string
+  onDeleteComment: (comment: string) => void
 }
 
 export function Comment({ author, content, onDeleteComment }: CommentProps) {
-  const [likeCount, setLikeCount] = useState(0);
+  const [likeCount, setLikeCount] = useState(0)
 
   function handleDeleteComment() {
-    onDeleteComment(content);
+    onDeleteComment(content)
   }
 
   function handleLikeComment() {
-    setLikeCount((prevState) => ++prevState);
+    setLikeCount((prevState) => ++prevState)
   }
 
   return (
     <div className={styles.comment}>
-      <Avatar src={author.avatarUrl} alt="" />
-
+      <Avatar src={author.avatarUrl} />
       <div className={styles.wrapper}>
         <div className={styles.commentBox}>
           <header>
             <div className={styles.authorAndTimer}>
               <strong>{author.name}</strong>
               <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:30">
-                Cerca de 2h atrás
+                Cerca de 2h
               </time>
             </div>
-
-            <button title="Deletar comentário" onClick={handleDeleteComment}>
+            <button onClick={handleDeleteComment} title="Deletar Comentário">
               <Trash />
             </button>
           </header>
@@ -49,11 +42,12 @@ export function Comment({ author, content, onDeleteComment }: CommentProps) {
 
         <footer>
           <button onClick={handleLikeComment}>
-            <ThumbsUp size={20} />
-            Aplaudir <span>{likeCount}</span>
+            <ThumbsUp />
+            Aplaudir
+            <span>{likeCount}</span>
           </button>
         </footer>
       </div>
     </div>
-  );
+  )
 }

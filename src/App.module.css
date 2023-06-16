@@ -1,31 +1,29 @@
 .wrapper {
-  width: min(98%, 112rem);
-  margin: 3.2rem auto;
-
   display: grid;
   grid-template-columns: 25.6rem 1fr;
   align-items: flex-start;
   gap: 3.2rem;
+
+  width: min(98%, 112rem);
+  margin: 3.2rem auto;
 }
 
 @media (max-width: 768px) {
   :root {
-    font-size: 56.25%; 
+    font-size: 56.25%;
   }
 
   .wrapper {
     grid-template-columns: 1fr;
-    width: 90%
+    width: 90%;
   }
 }
 
 @media (max-width: 450px) {
   :root {
-    font-size: 43.75%; 
+    font-size: 43.75%;
   }
-
 }
-
 
 /* 
  16 --> 100%

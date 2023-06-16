@@ -1,70 +1,67 @@
 .post {
   background-color: var(--gray-800);
-  padding: 4rem;
   border-radius: 8px;
+  padding: 4rem;
 }
 
 .post + .post {
   margin-top: 3.2rem;
 }
 
-.post > header {
+.postInfo {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
-.post > header > time {
-  color: var(--gray-400);
+.postInfo > time {
   font-size: 1.4rem;
-  line-height: 2.2rem;
+  color: var(--gray-400);
 }
-
 .content {
-  line-height: 2.6rem;
   margin: 2.4rem 0;
 }
 
-.content p {
+.content > p + p {
   margin-top: 1.6rem;
 }
 
-.content a {
-  color: var(--green-500);
-  font-weight: 700;
+.content > p {
   line-height: 2.6rem;
-  text-decoration: none;
 }
 
-.content a:hover {
+.content > p > a {
+  color: var(--green-500);
+  font-weight: 700;
+  text-decoration: none;
+}
+.content > p > a:hover {
   color: var(--green-300);
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
   border-top: 1px solid var(--gray-600);
   padding-top: 2.4rem;
 }
 
 .form > label {
-  color: var(--gray-100);
   font-weight: 700;
-  line-height: 2.6rem;
 }
 
 .form > textarea {
-  color: var(--gray-300);
   background-color: var(--gray-900);
+  color: var(--gray-300);
+  border: none;
+  line-height: 2.2rem;
+  display: block;
 
+  width: 100%;
+  min-height: 9.6rem;
+  margin-top: 1.6rem;
   padding: 1.3rem 1.6rem;
   border-radius: 8px;
-  height: 9.6rem;
 
-  outline: none;
-  border: 1px solid transparent;
   resize: none;
-  margin-top: 1.6rem;
 }
 
 .form > textarea::placeholder {
@@ -76,47 +73,33 @@
   max-height: 0px;
 }
 
-.form:focus-within footer {  /* Quando qualquer elemento dentro do form tiver com focus */
+.form:focus-within footer {
+  /* Quando qualquer elemento dentro do form tiver com focus */
   visibility: visible;
   max-height: none;
 }
 
-.form button[type='submit'] {
-  color: var(--white);
+.form > footer > button {
   background-color: var(--green-500);
+  color: var(--white);
   font-weight: 700;
-  line-height: 1.9rem;
 
-  width: 10.8rem;
-  height: 4.9rem;
   margin-top: 1.6rem;
+  padding: 1.6rem 2.4rem;
+  border-radius: 8px;
+  transition: background-color 200ms;
 
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 100ms;
-}
-
-.form button[type='submit']:hover:not(:disabled) {
-  background-color: var(--green-300);
-}
-
-.form button[type='submit']:focus {
   box-shadow: none;
+}
+
+.form > footer > button:not(:disabled):hover,
+.form > footer > button:not(:disabled):focus {
   background-color: var(--green-300);
 }
 
-.form button[type='submit']:disabled {
+.form > footer > button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.comments {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-.comments:has(div) {
-  margin-top: 3.2rem;
 }
