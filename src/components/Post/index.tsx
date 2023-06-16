@@ -2,7 +2,7 @@ import { useState, FormEvent, ChangeEvent, InvalidEvent } from 'react'
 import ptBR from 'date-fns/locale/pt-BR'
 import { format, formatDistanceToNow } from 'date-fns'
 
-import { Comment } from '../Comment'
+import { Comment, CommentType } from '../Comment'
 import { Profile } from '../Profile'
 
 import styles from './styles.module.css'
@@ -30,8 +30,14 @@ interface PostProps {
 }
 
 export function Post({ post }: PostProps) {
-  const [comments, setComments] = useState<string[]>([])
+  const [comments, setComments] = useState<CommentType[]>([])
   const [newComment, setNewComment] = useState<string>('')
+
+  const user: User = {
+    name: 'Mayk Brito',
+    avatarUrl: 'https://github.com/maykbrito.png',
+    occupation: 'teacher in @Rocketseat',
+  }
 
   const isNewCommentEmpty = newComment.length === 0
 
@@ -50,7 +56,10 @@ export function Post({ post }: PostProps) {
 
   function handleCreateNewComment(event: FormEvent) {
     event.preventDefault()
-    setComments((prevState) => [newComment, ...prevState])
+    setComments((prevState) => [
+      { author: user, content: newComment, publishedAt: new Date() },
+      ...prevState,
+    ])
     setNewComment('')
   }
 
@@ -66,7 +75,7 @@ export function Post({ post }: PostProps) {
 
   function deleteComment(commentDeleted: string) {
     setComments((prevState) =>
-      prevState.filter((comment) => comment !== commentDeleted),
+      prevState.filter((comment) => comment.content !== commentDeleted),
     )
   }
 
@@ -117,14 +126,9 @@ export function Post({ post }: PostProps) {
       <div>
         {comments.map((comment) => (
           <Comment
-            author={{
-              name: 'Mayk Brito',
-              avatarUrl: 'https://github.com/maykbrito.png',
-              occupation: 'teacher in @Rocketseat',
-            }}
-            content={comment}
+            comment={comment}
             onDeleteComment={deleteComment}
-            key={comment}
+            key={comment.content}
           />
         ))}
       </div>

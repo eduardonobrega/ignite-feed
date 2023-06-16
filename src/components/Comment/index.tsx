@@ -1,43 +1,68 @@
 import { useState } from 'react'
-import { Avatar } from '../Avatar'
-import styles from './styles.module.css'
+import { formatDistanceToNow, format } from 'date-fns'
 import { Trash, ThumbsUp } from '@phosphor-icons/react'
+
+import { Avatar } from '../Avatar'
 import { User } from '../Post'
 
-interface CommentProps {
+import styles from './styles.module.css'
+import { ptBR } from 'date-fns/locale'
+
+export interface CommentType {
   author: User
   content: string
+  publishedAt: Date
+}
+
+interface CommentProps {
+  comment: CommentType
   onDeleteComment: (comment: string) => void
 }
 
-export function Comment({ author, content, onDeleteComment }: CommentProps) {
+export function Comment({ comment, onDeleteComment }: CommentProps) {
   const [likeCount, setLikeCount] = useState(0)
 
   function handleDeleteComment() {
-    onDeleteComment(content)
+    onDeleteComment(comment.content)
   }
 
   function handleLikeComment() {
     setLikeCount((prevState) => ++prevState)
   }
 
+  const publishedDateFormatted = format(
+    comment.publishedAt,
+    "d 'de' LLLL 'às' HH':'mm'h'",
+    {
+      locale: ptBR,
+    },
+  )
+
+  const publishedDateRelativeToNow = formatDistanceToNow(comment.publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  })
+
   return (
     <div className={styles.comment}>
-      <Avatar src={author.avatarUrl} />
+      <Avatar src={comment.author.avatarUrl} />
       <div className={styles.wrapper}>
         <div className={styles.commentBox}>
           <header>
             <div className={styles.authorAndTimer}>
-              <strong>{author.name}</strong>
-              <time title="11 de Maio às 08:13h" dateTime="2022-05-11 08:13:30">
-                Cerca de 2h
+              <strong>{comment.author.name}</strong>
+              <time
+                title={publishedDateFormatted}
+                dateTime={comment.publishedAt.toISOString()}
+              >
+                {publishedDateRelativeToNow}
               </time>
             </div>
             <button onClick={handleDeleteComment} title="Deletar Comentário">
               <Trash />
             </button>
           </header>
-          <p>{content}</p>
+          <p>{comment.content}</p>
         </div>
 
         <footer>
