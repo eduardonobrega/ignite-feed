@@ -6,6 +6,7 @@ import { Comment, CommentType } from '../Comment'
 import { Profile } from '../Profile'
 
 import styles from './styles.module.css'
+import { Button } from '../Button'
 
 export interface User {
   name: string
@@ -117,9 +118,7 @@ export function Post({ post }: PostProps) {
         />
 
         <footer>
-          <button type="submit" disabled={isNewCommentEmpty}>
-            Comentar
-          </button>
+          <Button title="Comentar" type="submit" disabled={isNewCommentEmpty} />
         </footer>
       </form>
 
