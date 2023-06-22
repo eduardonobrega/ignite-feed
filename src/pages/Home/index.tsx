@@ -1,9 +1,8 @@
-import { Header } from './components/Header'
-import { Modal } from './components/Modal'
-import { Post, PostType } from './components/Post'
-import { Sidebar } from './components/Sidebar'
-import './global.css'
-import styles from './App.module.css'
+import { Header } from '../../components/Header'
+import { Modal } from '../../components/Modal'
+import { Post, PostType } from '../../components/Post'
+import { Sidebar } from '../../components/Sidebar'
+import styles from './styles.module.css'
 
 const posts: PostType[] = [
   {
@@ -42,7 +41,7 @@ const posts: PostType[] = [
   },
 ]
 
-export function App() {
+export function Home() {
   return (
     <div>
       <Header />
