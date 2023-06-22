@@ -2,7 +2,7 @@
   font-size: 62.5%;
   --white: #fff;
   --red: #f75a68;
-  --gray-100: #e1e1e6;
+  --gray-100: #e1e1e6; /* default */
   --gray-300: #c4c4cc;
   --gray-400: #8d8d99;
   --gray-500: #7c7c8a;
@@ -58,3 +58,32 @@ body {
   background-color: var(--gray-900);
   color: var(--gray-100);
 }
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 56.25%;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    font-size: 43.75%;
+  }
+}
+
+/* 
+ 16 --> 100%
+ 10 - x
+
+ 10*100/16 = 62.5%
+
+ 16 --> 100%
+ 7 --> x
+ 7*100/16 = 43.75%
+
+*/
