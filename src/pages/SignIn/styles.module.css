@@ -1,0 +1,45 @@
+.containerForm {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  background-color: var(--gray-800);
+
+  width: min(95%, 47.6rem);
+  padding: 5.4rem 6.4rem;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.loginForm > header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loginForm > header > img {
+  width: 4rem;
+}
+
+.loginForm > header > h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.loginForm > a {
+  color: var(--gray-100);
+  text-decoration: none;
+  align-self: center;
+  font-weight: 500;
+}
+
+.loginForm > a:hover {
+  text-decoration: underline;
+}
