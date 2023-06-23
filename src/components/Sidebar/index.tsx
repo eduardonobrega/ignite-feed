@@ -2,6 +2,7 @@ import { Profile } from '../Profile'
 import { PencilSimpleLine } from '@phosphor-icons/react'
 import styles from './styles.module.css'
 import { User } from '../Post'
+import { NavLink } from 'react-router-dom'
 
 export function Sidebar() {
   const user: User = {
@@ -18,10 +19,10 @@ export function Sidebar() {
       <Profile user={user} column />
 
       <footer>
-        <a href="#">
+        <NavLink to="/profile">
           <PencilSimpleLine />
           Editar seu perfil
-        </a>
+        </NavLink>
       </footer>
     </aside>
   )
