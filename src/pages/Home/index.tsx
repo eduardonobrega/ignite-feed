@@ -1,4 +1,3 @@
-import { Header } from '../../components/Header'
 import { Modal } from '../../components/Modal'
 import { Post, PostType } from '../../components/Post'
 import { Sidebar } from '../../components/Sidebar'
@@ -44,7 +43,6 @@ const posts: PostType[] = [
 export function Home() {
   return (
     <div>
-      <Header />
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
