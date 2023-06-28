@@ -1,18 +1,41 @@
 .header {
   background-color: var(--gray-800);
-  height: 10rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 10rem;
+  grid-template-areas: ". logo exit";
+  place-items: center;
+}
 
+.header > a {
+  grid-area: exit;
+  margin-right: 5vw;
+  justify-self: end;
+
+  color: var(--green-300);
+}
+
+.header > a:hover {
+  color: var(--green-500);
+}
+.header > a > svg {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.header > div {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.6rem;
+  grid-area: logo;
 }
 
-.header > h1 {
+.header > div > h1 {
   font-weight: 700;
   font-size: 2.5rem;
 }
 
-.header > img {
+.header > div > img {
   width: 3.2rem;
 }
