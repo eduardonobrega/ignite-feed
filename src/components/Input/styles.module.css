@@ -2,23 +2,50 @@
   color: var(--gray-300);
 }
 
-.input {
-  display: block;
-
+.wrapperInput {
   background-color: var(--gray-900);
-  color: var(--gray-400);
-
-  width: 100%;
+  display: flex;
+  align-items: center;
   height: 4.8rem;
+  width: 100%;
   margin-top: 0.8rem;
-  padding: 1.2rem 1.4rem;
   border-radius: 8px;
+  padding: 0 1.4rem;
+}
+
+.wrapperInput:has(.input:focus) {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+  border-radius: 8px;
+}
+
+.wrapperInput:has(.input:focus) svg {
+  color: var(--green-500);
+}
+
+.wrapperInput svg {
+  color: var(--gray-600);
+  width: 2rem;
+  height: 2rem;
+}
+
+.wrapperInput:has(svg) .input {
+  padding-left: 1.2rem;
+}
+
+.input {
+  flex: 1;
+  color: var(--gray-300);
+  background-color: transparent;
+  height: 100%;
+
   border: none;
 }
 
 .input::placeholder {
   color: var(--gray-500);
 }
+
 .input:focus-visible {
-  border-radius: 8px;
+  box-shadow: none;
 }
