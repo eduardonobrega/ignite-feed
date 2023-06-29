@@ -8,4 +8,9 @@
   margin: 3.2rem auto;
 }
 
-
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+}

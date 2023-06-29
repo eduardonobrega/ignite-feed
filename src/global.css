@@ -63,11 +63,6 @@ body {
   :root {
     font-size: 56.25%;
   }
-
-  .wrapper {
-    grid-template-columns: 1fr;
-    width: 90%;
-  }
 }
 
 @media (max-width: 450px) {
