@@ -19,13 +19,13 @@ export function Sidebar() {
       <Profile user={user} column />
 
       <footer>
-        <NavLink to="/profile" className={styles.editButton}>
-          <PencilSimpleLine />
-          Editar seu perfil
-        </NavLink>
         <NavLink to="/new" className={styles.newPostButton}>
           <Plus />
           New Post
+        </NavLink>
+        <NavLink to="/profile" className={styles.editButton}>
+          <PencilSimpleLine />
+          Editar seu perfil
         </NavLink>
       </footer>
     </aside>

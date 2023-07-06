@@ -61,7 +61,7 @@
 .newPostButton {
   background-color: var(--green-300);
   border: 1px solid var(--green-300);
-  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
 
   color: var(--gray-600);
 }
