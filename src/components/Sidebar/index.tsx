@@ -1,5 +1,5 @@
 import { Profile } from '../Profile'
-import { PencilSimpleLine } from '@phosphor-icons/react'
+import { PencilSimpleLine, Plus } from '@phosphor-icons/react'
 import styles from './styles.module.css'
 import { User } from '../Post'
 import { NavLink } from 'react-router-dom'
@@ -19,9 +19,13 @@ export function Sidebar() {
       <Profile user={user} column />
 
       <footer>
-        <NavLink to="/profile">
+        <NavLink to="/profile" className={styles.editButton}>
           <PencilSimpleLine />
           Editar seu perfil
+        </NavLink>
+        <NavLink to="/new" className={styles.newPostButton}>
+          <Plus />
+          New Post
         </NavLink>
       </footer>
     </aside>
