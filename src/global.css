@@ -59,6 +59,18 @@ body {
   color: var(--gray-100);
 }
 
+ ::-webkit-scrollbar {
+  width: .8rem;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: .8rem;
+    background-color: var(--gray-600);
+  }
+
+
 @media (max-width: 768px) {
   :root {
     font-size: 56.25%;
