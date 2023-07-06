@@ -1,17 +1,15 @@
-import { ArrowCircleLeft, Envelope, Keyhole, User } from '@phosphor-icons/react'
+import { Envelope, Keyhole, User } from '@phosphor-icons/react'
 import { Avatar } from '../../components/Avatar'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import styles from './styles.module.css'
 import { UploadButton } from './uploadButton'
-import { NavLink } from 'react-router-dom'
+import { BackButton } from '../../components/BackButton'
 
 export function EditProfile() {
   return (
     <div className={styles.profileContainer}>
-      <NavLink to="/">
-        <ArrowCircleLeft />
-      </NavLink>
+      <BackButton pagePath="/" />
       <form className={styles.form}>
         <div className={styles.inputBanner}>
           <img

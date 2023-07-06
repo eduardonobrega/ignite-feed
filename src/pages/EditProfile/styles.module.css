@@ -9,24 +9,9 @@
 }
 
 .profileContainer > a {
-  background-color: transparent;
-  color: var(--green-300);
-  border-radius: 50%;
-  background-color: var(--gray-800);
-  padding: 4px;
-
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.profileContainer > a:hover {
-  color: var(--green-500);
-}
-
-.profileContainer > a > svg {
-  width: 4.2rem;
-  height: 4.2rem;
 }
 
 .form {
